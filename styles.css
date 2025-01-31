@@ -1,0 +1,6381 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', serif, Verdana, Tahoma, sans-serif;
+    margin:0;
+    padding:0;
+}
+
+body,html{
+    background: #081b29;
+    box-sizing: border-box;
+    color:#ededed;
+    height:100vh;
+    margin:0px;  /*Ensures full screen height is used */
+    /* border: 2px green solid;
+ */
+}
+
+
+
+.header{
+    padding: 20px 10px;
+    width: 100%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:100;
+    margin: 0px 10px 20px 0px;
+
+}
+
+#mss_home{
+    text-decoration: none;
+    font-weight: bold;
+    color:rgb(7, 133, 218);
+
+}
+
+.header #mss_logo{
+    border: 3px solid #00abf0;
+    height: 50px;
+    margin-left: 30px;
+    border-radius: 50%;
+}
+
+.header .name_logo_box{
+    /* border:2px solid red; */
+    display: inline-flex;
+    justify-content: space-between;
+    width:600;
+    margin: 30px;
+    letter-spacing: 3px;
+}
+
+
+.logo{
+    font-size:35px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: bold
+}
+
+.navbar a {
+    font-size: 18px;
+    color:#ededed;
+    font-weight: 500;
+    margin-left: 35px;
+    text-decoration:none;
+    padding-right:40px;
+}
+
+.navbar a:hover {
+    color:#00abf0;
+}
+
+.navbar{
+    /* border: 3px solid red; */
+    margin-right: 240px;
+}
+
+.home{
+    /* border: 2px solid pink; */
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100vh;
+    height:90vh;
+    padding-left:30px;
+}
+
+.home_content {
+    max-width:100vh;
+    height:70%;
+    /* border: 2px solid magenta; */
+    display:flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-right:20px;
+    position:absolute; /*Position is used to help move this html element anywhere I want inside the .container */
+    top: 180px;
+    
+}
+
+.home_content h1{
+    font-size: 50px;
+    font-weight:700;
+}
+
+.home_content h3{
+    font-size: 32px;
+    font-weight:700;
+    color:#00abf0;
+}
+
+/* .home_content h4{
+    font-size: 32px;
+    font-weight:700;
+    color:#00abf0;
+    border: 2px solid yellowgreen;
+    margin-top: 5px;
+    position: absolute; 
+    top:220px;
+} */
+
+.home_content p{
+    font-size: 18px;
+    /* border: 2px solid teal; */
+    margin-bottom:2px;
+    margin-top:10px;
+   
+}
+
+.home_content .buttons{
+    width:100vh;
+    height:8vh;
+    margin-top:20px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 3px solid green; */
+
+}
+
+.buttons #mss_home{
+    padding:3px;
+    /* border:2px solid mediumslateblue; */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*animated Buttons Start Portion */
+
+.buttons a {
+    position: relative;
+    text-decoration: none;
+    width: 150px;
+    height: 50px;
+    padding: 0;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    color: #081b29;
+    background-color: #00abf0;
+    font-weight: 600;
+    overflow: hidden; /* This keeps the pink transition within the button */
+    z-index: 1;
+}
+
+.buttons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #02455c;
+    z-index: -1;
+    transition: width 1s;
+}
+
+.buttons a:hover::before {
+    width: 100%; /* Expands to full width on hover */
+}
+
+.buttons a:hover {
+    color: #c1e9fa; /* Text color on hover */
+}
+
+/*animated Buttons End Portion */
+.sm_icons{
+    margin-top:auto;
+    /* border: 2px solid white; */
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+    height: 50px;
+}
+
+
+
+.sm_icons a{
+    position:relative;
+    border: 2px solid #00abf0 ;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #00abf0;
+    z-index: 1;
+    overflow: hidden; /* Prevents the "before color" from spilling out of the circle borders */
+}
+
+.sm_icons a::before {
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    width:0; /* This is to allow for the color to transition from 0 to the full width of 100% */
+    height:100%;
+    background:#00abf0;
+    z-index: -1;
+    transition: 1s;
+}
+
+.sm_icons a:hover::before {
+    width:100%;
+}
+
+.sm_icons a:hover{
+    color:#081b29;
+}
+
+.container {
+    /* border: 2px solid hotpink; */
+    width: 100%;
+    height:70vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 200px;
+    /* border: 2px solid orange; */
+
+}
+
+.home_content #degree{
+    text-decoration: none;
+    color:#00abf0;
+
+}
+
+
+.container .profile_picture{
+    margin-right: 250px;
+    min-width: 40vh; /*Min and max width help me constrain the image better */
+    min-height: 40vh;
+    max-width: 50vh;
+    max-height: 50vh;
+    margin-top:200px;
+    /* border: solid 2px teal; */
+}
+
+.profile_picture h3{
+    /* border:solid 2px yellow; */
+    width:40vh;
+    margin: auto;
+    position: relative;
+    bottom: 150px;
+    text-align: center;
+    color:#00abf0;
+
+}
+
+.profile_picture #pp {
+    position: relative;
+    top:-150px;
+    border: 4px solid #00abf0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color: transparent;
+    z-index: 1;
+    overflow: hidden;
+    transition: background-color 3s; /* Smooth transition for background color */
+}
+
+.profile_picture #pp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #00abf0;
+    z-index: -1;
+    transition: width 3s;
+}
+
+.profile_picture #pp:hover::before {
+    width: 100%;
+}
+
+.profile_picture #pp:hover {
+    background-color: #00abf0;
+}
+
+/*FOOTER POSITIONING SECTION BEGIN */
+
+.conatiner footer{             /* We are targetting the footer in the conatainer in the portfoilio.html */
+    border: 2px solid yellowgreen;
+    height:500px;
+    width:500px;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; /* Centers horizontally */
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+.body_box footer{             /* We are targetting the footer in the conatainer in the about.html */
+    /* border: 2px solid maroon; */
+    height: 5vh;
+    width:20%;
+    position: absolute;
+    left:0px;
+    bottom: -1000px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+.gallery footer{             /* We are targetting the footer in the conatainer in the portfolio.html */
+    /* border: 2px solid maroon; */
+    height: 5vh;
+    width:20%;
+    position: absolute;
+    left:0px;
+    bottom: -280px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+.market_description > footer {  /*Marketplace App Footer positioning */
+    position: absolute;
+    bottom: -480px;
+    left: 0px;
+} 
+
+/*FOOTER POSITIONING SECTION END */
+
+
+/* ABOUT SECTION */
+.intro_box{
+    /* border: 2px solid magenta; */
+    height:600px;
+    width:100%;
+    margin-top:5px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:40px;
+
+}
+
+#fun_project{
+    text-decoration: none;
+    font-weight: bold;
+    color:magenta;
+}
+
+.intro_box> #mugg_shot{
+    height:60vh;
+    width:70vh;
+    /* border:2px solid darkgreen; */
+    margin:auto;
+    margin-top:5px;
+    border-radius: 50%;
+    border-bottom: 3px solid #00abf0 ;
+   
+}
+
+.intro_box> #mugg_shot:hover{
+    background-color:#00abf0
+}
+
+.intro_details{
+    margin:auto;
+    margin-top:10px;
+    /* border:2px solid white; */
+    width: 100vh;
+    height: 63vh;
+    font-size: 23px;
+}
+
+.intro_details h1{
+    /* border:2px solid red; */
+    text-align: center;
+    height:20%;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#00abf0;
+}
+
+.intro_details p{
+    /* border:4px solid lightseagreen; */
+    height:78%;
+}
+
+.body_box{
+    /* border: 2px solid rgb(187, 255, 0); */
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.body_details{
+    width:100vh;
+    height:50vh;
+    /* border: 3px solid darkorange; */
+    margin:auto;
+}
+
+
+.body_details h1{
+    border:3px solid #00abf0 ;
+    text-align: center;
+    height:10%;
+    font-size: 40px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:8px;
+}
+
+.body_details h2{
+    /* border:4px solid lightseagreen; */
+    height:4vh;
+    width:100vh;
+    margin-top:20px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#00abf0;
+    font-weight: bold;
+}
+
+.experience{
+    /* border: 3px solid red; */
+    width: 100vh;
+    height: 40vw;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.experience h1{
+    border: 3px solid  #00abf0;
+    text-align: center;
+    font-size:40px;
+    margin-bottom: 10px;
+    border-radius:8px;
+}
+
+.experience #in_software{                     /*No comma tell CSS to target any h2 elements inside the .experience class */
+    border: 2px solid #00abf0;
+    border-radius:8px;               
+    font-size:25px;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+#CRM,#marketplace,#custom_sites{    /*The commas between the selectors tell CSS that all the ids that I want all the items have the same property.*/
+    margin-bottom:20px;
+    word-spacing: 5px;
+    font-size: 18px;
+}
+
+#CRM_header,#marketplace_header,#custom_sites_header{
+    color:#00abf0
+}
+
+.experience #outside_software{                     
+    border: 2px solid #00abf0; 
+    border-radius:8px;            
+    font-size:25px;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.experience #in_software,.experience #outside_software{
+    letter-spacing: 1px;
+}
+
+/*Learn More Box animation BEGIN*/
+#more_about_projects {
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid #00abf0;
+    border-radius: 10px;
+    color: white;
+    height: 30px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#more_about_projects::before {
+    content: ''; /* Render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place behind text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+#more_about_projects:hover::before {
+    width: 100%; /* Expand background */
+}
+
+
+/*Learn More Box animation END*/
+
+.outside_software_box{
+    /* border:3px solid salmon; */
+    height: 50%;
+}
+
+.outside_software_box p{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+}
+
+.outside_software_box ul{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    max-width: 100vh;
+    max-height: 100px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.outside_software_box> ul >li{    /*Greater than symbols help us target the list item nested inside the ul which is nested inside the "outside_software_box div */
+    margin-bottom:20px;
+}
+
+.outside_software_box> ul> li::marker {
+    color:#00abf0;
+  }
+
+#TM_2,#drone{
+    text-decoration: none;
+}
+
+#TM_2{
+    color:greenyellow;
+    font-weight: 600;
+}
+
+#drone{
+    color: rgb(7, 133, 218);
+    font-weight: 600;
+}
+
+/* Experience and Certifications */
+
+/* Certificate Box Animations BEGIN*/
+.certificate_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:30px;
+}
+
+.certificate_box > a {
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    height: 20%;
+    margin: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 8px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.certificate_box > a::before {
+    content: ''; /* Add this to render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place it behind the text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+.certificate_box > a:hover::before {
+    width: 100%; /* Fill the box on hover */
+}
+
+/* Certificate Box Animations END*/
+
+
+.skills_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:30px;
+    flex-wrap:flex;
+    width:100vh;
+    height:10vh;
+}
+
+.skills_box> a{
+    text-decoration: none;
+    border:2px solid #00abf0;
+    height:20%;
+    margin: 5px;
+    color:white;
+    padding: 10px;
+    text-align: center;
+    font-size:12px;
+    border-radius: 8px;
+}
+
+/* Portfolio sub section */
+.gallery{
+    height: 100vh;
+    width: 99%;
+    /* border: 2px solid magenta; */
+}
+
+.image_section_1{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.image_section_2{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+.img_1_box{
+    /* border:2px solid magenta; */
+    height:400px;
+    width:600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_pics{
+    height:300px;
+    width:500px;
+    border-radius: 8px;
+    border:3px solid #00abf0;
+}
+
+.img_1_box >a >h2{
+    border:3px solid #00abf0;
+    text-align:center;
+    color:#00abf0;
+    background-color: aliceblue;
+    border-radius: 8px;
+}
+
+.img_1_box > a{
+    text-decoration: none;
+}
+
+/*DESCRIPTION PAGES */
+
+/* MARKETPLACE APP */
+.market_description{
+    /* border: 2px solid blueviolet; */
+    height: 1400px;
+}
+
+.market_description_box{
+    /* border: 2px solid greenyellow; */
+    width:100%;
+    height: 120vh;
+}
+
+.heading_image_box{
+    /* border: 3px solid turquoise; */
+    width:70vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#problem_image{
+    height:500px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+.problem_box_market{
+    /* border: 2px solid red; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.problem_box_market> .problem_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:839px;
+    color: rgb(7, 133, 218);
+    font-size: 30px;
+}
+
+.problem_box_market> .problem_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:100%;
+    height:110%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 5px;
+}
+
+
+
+.problem_box_market> .problem_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 90vh;
+    margin-top: 100px;
+}
+
+/*SOLUTION */
+
+
+.solution_box_market{
+    /* border: 3px solid teal; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.solution_box_market>h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+}
+
+
+
+.solution_box_market> .solution_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 80vh;
+    margin-top: 100px;
+}
+
+.solution_box_market> .solution_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:747px;
+    color: rgb(7, 133, 218);
+    font-size: 30px;
+}
+
+.solution_box_market> .solution_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:100%;
+    height:110%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 5px;
+}
+
+#solution_image{
+    height:400px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+
+
+#heading_image_box_robot > iframe{
+    border: 3px solid #00abf0;
+    width:70vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#heading_image_box_market > iframe{
+    border: 3px solid #00abf0;
+    width:70vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#heading_image_box_engine > iframe{
+    border: 3px solid #00abf0;
+    width:60vh;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 60px;
+}
+
+#heading_image_box_crm > iframe{
+    border: 3px solid #00abf0;
+    width:70vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#MSS_link{
+    text-decoration: none;
+    color:aqua;
+
+}
+
+/*RESPONSIVE SECTION */
+/* Smartphones (portrait and landscape) ----------- */
+
+
+/*MEDIA SET 1 */
+
+@media only screen and
+(min-width : 300px)
+and (max-width : 550px)
+ {
+
+    /* HOME PAGE BEGIN */
+
+    /* NAV SECTION BEGIN */
+    body{
+        /* background-color: red; */
+        overflow-x: hidden;
+    }
+
+    .header{
+        padding: 20px 10px;
+        width: 100%;
+        /* border: 2px solid pink; */
+        align-items: center;
+        z-index:100;
+        margin: 0px 0px 2px 0px;
+    
+    }
+
+    #my_name{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .header .name_logo_box{
+        /* border:2px solid red; */
+        display: flex;
+        /* justify-content: space-between; */
+        width:200px;
+        align-items: center;
+        /* margin: 20px; */
+        /* letter-spacing: 3px; */
+    }
+    
+    .header #mss_logo{
+        border: 3px solid #00abf0;
+        height: 40px;
+        margin-left: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 240px;
+        top: 60px;
+        margin-left: 40px;
+    }
+    
+    
+    
+    .logo{
+        font-size:35px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: bold
+    }
+
+    .navbar{
+        /* display: flex;
+        justify-content: space-evenly;  */
+        /* border: 2px solid magenta; */
+        margin-right: 40px;
+        width: 150px;
+       
+    }
+    
+    .navbar a {
+        font-size: 15px;
+        color:#ededed;
+        font-weight: 500;
+        text-decoration:none;
+        margin-right: 20px;
+        padding-right:40px;
+        /* border: 2px solid orange; */
+        display:flex;
+        justify-content: space-between;
+    }
+    
+
+
+    /* NAV SECTION END */
+
+    .home_content h1{    /* Media queries are like if stateements for CSS. Here we're saying, IF the screen shrinks to a width of 600px then reduce the font size of h1 */
+        font-size: 20px;
+        font-weight:700;
+        /* letter-spacing: 2px; */
+        word-spacing: 3px;
+        /* border: 2px solid red; */
+        height: 30px;
+       
+    }
+
+    .home_content h3{
+        font-size: 15px;
+        font-weight:700px;
+        color:#00abf0;
+        /* border: 2px solid red; */
+        height: 30px;
+        margin-top:-60px;
+    }
+
+    .home_content p{
+        font-size: 15px;
+        /* border: 2px solid teal; */
+        margin-bottom:2px;
+        margin-top:-100px;
+       
+    }
+
+    .profile_picture h3{
+        /* border:solid 2px yellow; */
+        width:20vh;
+        margin: auto;
+        position: relative;
+        top: 380px;
+        left: 145px;
+        text-align: center;
+        color:#00abf0;
+        font-size : 0.7rem;
+    
+    }
+    
+    .profile_picture #pp {
+        position: relative;
+        top:380px;
+        left: 250px;
+        border: 4px solid #00abf0;
+        width: 40%;
+        height: 40%;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 30px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        transition: background-color 3s; /* Smooth transition for background color */
+    }
+
+    .sm_icons {
+        text-align: center;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: -80px;
+        width: 200px;
+        height: 30px;
+        /* margin-top: 200px; */
+        /* border: 2px solid magenta;   */
+    }
+
+    .sm_icons > a{
+        height: 35px;
+        width: 35px;
+    }
+
+
+    /* HOME PAGE END */
+
+
+
+ /* ABOUT SECTION */
+
+.intro_box{
+    /* border: 2px solid magenta; */
+    height:60vh;
+    width:100%;
+    margin-top:50px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom:40px; */
+
+}
+
+.intro_box> #mugg_shot{
+    height:30vh;
+    width:30vh;
+    /* border:2px solid darkgreen; */
+    margin:auto;
+    margin-top:200px;
+    border-radius: 50%;
+    border-bottom: 3px solid #00abf0 ;
+   
+}
+
+.intro_box> #mugg_shot:hover{
+    background-color:#00abf0
+}
+
+.intro_details{
+    margin:auto;
+    margin-top:10px;
+    /* border:2px solid white; */
+    /* width: 100vh; */
+    height: 65vh;
+    font-size: 23px;
+    padding: 0px 0px 20px 20px;
+    /* margin-bottom: 5px; */
+    /* margin-top: 10px; */
+}
+
+.intro_details h1{
+    /* border:2px solid mediumseagreen; */
+    text-align: center;
+    height:5%;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#00abf0;
+    margin-bottom: 10px;
+}
+
+.intro_details p{
+    /* border:4px solid lightseagreen; */
+    height:78%;
+    font-size: 0.9rem;
+}
+
+.body_box{
+    /* border: 2px solid rgb(187, 255, 0); */
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+
+
+.experience{
+    /* border: 3px solid red; */
+    width: 50vw;
+    height: 100vh;
+    margin: auto;
+    margin-top: -200px;
+}
+
+
+.experience h1{
+    border: 3px solid  #00abf0;
+    text-align: center;
+    font-size:1.2rem;
+    margin-bottom: 10px;
+    border-radius:8px;
+}
+
+.experience #in_software{                     /*No comma tell CSS to target any h2 elements inside the .experience class */
+    border: 2px solid #00abf0;
+    border-radius:8px;               
+    font-size:1.2rem;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+#CRM,#marketplace,#custom_sites{    /*The commas between the selectors tell CSS that all the ids that I want all the items have the same property.*/
+    margin-bottom:20px;
+    word-spacing: 5px;
+    font-size: 0.8rem;
+}
+
+#CRM_header,#marketplace_header,#custom_sites_header{
+    color:#00abf0;
+    font-size: 0.9rem;
+}
+
+.experience #outside_software{                     
+    border: 2px solid #00abf0; 
+    border-radius:8px;            
+    font-size:1.2rem;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.experience #in_software,.experience #outside_software{
+    letter-spacing: 1px;
+}
+
+/*Learn More Box animation BEGIN*/
+#more_about_projects {
+    text-decoration: none;
+    font-size: 0.6rem;
+    border: 2px solid #00abf0;
+    border-radius: 10px;
+    color: white;
+    height: 30px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#more_about_projects::before {
+    content: ''; /* Render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place behind text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+#more_about_projects:hover::before {
+    width: 100%; /* Expand background */
+}
+
+
+/*Learn More Box animation END*/
+
+.outside_software_box{
+    /* border:3px solid salmon; */
+    height: 20%;
+}
+
+.outside_software_box p{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    font-size: 0.8rem;
+}
+
+.outside_software_box ul{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    max-width: 100vh;
+    max-height: 100px;
+    padding: 20px;
+    font-size: 0.8rem;
+}
+
+.outside_software_box> ul >li{    /*Greater than symbols help us target the list item nested inside the ul which is nested inside the "outside_software_box div */
+    margin-bottom:20px;
+}
+
+.outside_software_box> ul> li::marker {
+    color:#00abf0;
+  }
+
+#TM_2,#drone{
+    text-decoration: none;
+}
+
+#TM_2{
+    color:greenyellow;
+    font-weight: 600;
+}
+
+#drone{
+    color: rgb(7, 133, 218);
+    font-weight: 600;
+}
+
+/* Experience and Certifications */
+
+.body_details h1{
+    border:3px solid #00abf0 ;
+    text-align: center;
+    height:10%;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:6px;
+}
+
+.body_details h2{
+    /* border:4px solid lightseagreen; */
+    height:4vh;
+    width:40vw;
+    margin-top:20px;
+    margin-bottom:-20px;
+    text-align:center;
+    color:#00abf0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+.body_details{
+    width:40vw;
+    height:50vh;
+    /* border: 3px solid #00abf0; */
+    margin-left:auto;
+}
+
+/* Certificate Box Animations BEGIN*/
+.certificate_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.certificate_box > a {
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    height: 10%;
+    margin: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.5rem;
+    border-radius: 8px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.certificate_box > a::before {
+    content: ''; /* Add this to render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place it behind the text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+.certificate_box > a:hover::before {
+    width: 100%; /* Fill the box on hover */
+}
+
+/* Certificate Box Animations END*/
+
+
+.skills_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom:-30px;
+    flex-wrap:wrap;
+    width:40vw;
+    height:20vh;
+    position: relative;
+    top: 20px;
+}
+
+.skills_box> a{
+    text-decoration: none;
+    border:2px solid #00abf0;
+    height:5%;
+    margin: 5px;
+    color:white;
+    padding: 10px;
+    text-align: center;
+    font-size:0.5rem;
+    border-radius: 8px;
+}
+
+/* ABOUT SECTION END */
+
+
+.body_box footer{             /* We are targetting the footer in the conatainer in the about.html */
+    /* border: 2px solid maroon; */
+    height: 10vh;
+    width:40%;
+    position: absolute;
+    left:300px;
+    bottom: -1200px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+
+/* PORTFOLIO SECTION  */
+
+/* Portfolio sub section */
+.gallery{
+    height: 70vh;
+    width: 99%;
+    /* border: 2px solid magenta; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.image_section_1{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.image_section_2{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+
+
+
+.img_1_box{
+    /* border:2px solid magenta; */
+    height:400px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_pics{
+    height:20vh;
+    width:40vw;
+    border-radius: 8px;
+    border:3px solid #00abf0;
+}
+
+.img_1_box >a >h2{
+    border:3px solid #00abf0;
+    text-align:center;
+    color:#00abf0;
+    background-color: aliceblue;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    width: 40vw;
+    height: 6vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.img_1_box > a{
+    text-decoration: none;
+}
+
+.gallery footer{             /* We are targetting the footer in the conatainer in the portfolio.html */
+    /* border: 2px solid maroon; */
+    height: 3vh;
+    width:40%;
+    position: absolute;
+    left:0px;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION END */
+
+
+
+
+/*DESCRIPTION PAGES BEGIN */
+
+/* MARKETPLACE APP */
+.market_description{
+    /* border: 2px solid blueviolet; */
+    height: 1400px;
+}
+
+.market_description_box{
+    /* border: 2px solid greenyellow; */
+    width:100%;
+    height: 120vh;
+}
+
+.heading_image_box{
+    /* border: 3px solid turquoise; */
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#problem_image{
+    height:40vh;
+    width: 60vw;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+.problem_box_market{
+    /* border: 2px solid red; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.problem_box_market> .problem_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:20vw;
+    color: rgb(7, 133, 218);
+    font-size:1.2rem;
+    position: absolute;
+    left: 200px;
+    top: 600px;
+}
+
+.problem_box_market> .problem_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:93vw;
+    height:20vh;
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    padding: 5px;
+    margin-top: -50px;
+}
+
+
+
+.problem_box_market> .problem_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 90vh;
+    margin-top: 100px;
+}
+
+/*SOLUTION */
+
+
+.solution_box_market{
+    /* border: 3px solid teal; */
+    width:50vw;
+    height: 30vh;
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 140px;
+}
+
+
+.solution_box_market> .solution_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 80vh;
+    margin-top: 100px;
+}
+
+.solution_box_market> .solution_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:20vw;
+    color: rgb(7, 133, 218);
+    font-size: 1.2rem;
+    position: absolute;
+    left: 200px;
+    top: 840px;
+   
+}
+
+.solution_box_market> .solution_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:93vw;
+    height:20vh;
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    padding: 5px;
+    margin-top: 300px;
+}
+
+#solution_image{
+    height:400px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+
+
+#heading_image_box_robot > iframe{
+    border: 3px solid #00abf0;
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#heading_image_box_market > iframe{
+    border: 3px solid #00abf0;
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#heading_image_box_engine > iframe{
+    border: 3px solid #00abf0;
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#heading_image_box_crm > iframe{
+    border: 3px solid #00abf0;
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#MSS_link{
+    text-decoration: none;
+    color:aqua;
+
+}
+
+.market_description > footer {  /*Marketplace App Footer positioning */
+    position: absolute;
+    bottom: -580px;
+    left: 0px;
+    /* border: 2px solid magenta; */
+    width: 33vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+/*DESCRIPTION PAGES END */
+
+
+}
+
+/*MEDIA SET 2 */
+
+
+@media only screen and
+(min-width : 550px)
+and (max-width : 700px)
+ {
+
+    /* HOME PAGE BEGIN */
+
+    /* NAV SECTION BEGIN */
+    body{
+        /* background-color: magenta; */
+        overflow-x: hidden;
+    }
+
+    .header{
+        padding: 20px 10px;
+        width: 100%;
+        /* border: 2px solid pink; */
+        align-items: center;
+        z-index:100;
+        margin: 0px 0px 2px 0px;
+    
+    }
+
+    #my_name{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .header .name_logo_box{
+        /* border:2px solid red; */
+        display: flex;
+        /* justify-content: space-between; */
+        width:200px;
+        align-items: center;
+        /* margin: 20px; */
+        /* letter-spacing: 3px; */
+    }
+    
+    .header #mss_logo{
+        border: 3px solid #00abf0;
+        height: 40px;
+        margin-left: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 240px;
+        top: 60px;
+        margin-left: 40px;
+    }
+    
+    
+    
+    .logo{
+        font-size:35px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: bold
+    }
+
+    .navbar{
+        /* display: flex;
+        justify-content: space-evenly;  */
+        /* border: 2px solid magenta; */
+        margin-right: 40px;
+        width: 150px;
+       
+    }
+    
+    .navbar a {
+        font-size: 15px;
+        color:#ededed;
+        font-weight: 500;
+        text-decoration:none;
+        margin-right: 20px;
+        padding-right:40px;
+        /* border: 2px solid orange; */
+        display:flex;
+        justify-content: space-between;
+    }
+    
+
+
+    /* NAV SECTION END */
+
+    .home_content h1{    /* Media queries are like if stateements for CSS. Here we're saying, IF the screen shrinks to a width of 600px then reduce the font size of h1 */
+        font-size: 20px;
+        font-weight:700;
+        /* letter-spacing: 2px; */
+        word-spacing: 3px;
+        /* border: 2px solid red; */
+        height: 30px;
+       
+    }
+
+    .home_content h3{
+        font-size: 15px;
+        font-weight:700px;
+        color:#00abf0;
+        /* border: 2px solid red; */
+        height: 30px;
+        position: absolute;
+        top: 60px;
+    }
+
+    .home_content p{
+        font-size: 15px;
+        /* border: 2px solid teal; */
+        margin-bottom:2px;
+        margin-top:-100px;
+       
+    }
+
+    .profile_picture h3{
+        /* border:solid 2px yellow; */
+        width:20vh;
+        margin: auto;
+        position: relative;
+        top: 300px;
+        left: 300px;
+        text-align: center;
+        color:#00abf0;
+        font-size : 0.7rem;
+    
+    }
+    
+    .profile_picture #pp {
+        position: relative;
+        top:300px;
+        left: 350px;
+        border: 4px solid #00abf0;
+        width: 60%;
+        height: 60%;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 30px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        transition: background-color 3s; /* Smooth transition for background color */
+    }
+
+    .sm_icons {
+        text-align: center;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: -80px;
+        width: 200px;
+        height: 30px;
+        /* margin-top: 200px; */
+        /* border: 2px solid magenta;   */
+    }
+
+    .sm_icons > a{
+        height: 35px;
+        width: 35px;
+    }
+
+
+    /* HOME PAGE END */
+
+    /* ABOUT SECTION */
+
+.intro_box{
+    /* border: 2px solid magenta; */
+    height:300px;
+    width:100%;
+    margin-top:5px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom:40px; */
+
+}
+
+.intro_box> #mugg_shot{
+    height:30vh;
+    width:30vh;
+    /* border:2px solid darkgreen; */
+    margin:auto;
+    margin-top:200px;
+    border-radius: 50%;
+    border-bottom: 3px solid #00abf0 ;
+   
+}
+
+.intro_box> #mugg_shot:hover{
+    background-color:#00abf0
+}
+
+.intro_details{
+    margin:auto;
+    margin-top:10px;
+    /* border:2px solid white; */
+    /* width: 100vh; */
+    height: 78vh;
+    /* font-size:1.3rem; */
+    padding: 0px 0px 20px 20px;
+    /* margin-bottom: 5px; */
+    /* margin-top: 10px; */
+}
+
+.intro_details h1{
+    /* border:2px solid mediumseagreen; */
+    text-align: center;
+    height:8%;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#00abf0;
+    margin-bottom: 10px;
+}
+
+.intro_details p{
+    /* border:4px solid lightseagreen; */
+    height:78%;
+    font-size: 1.2rem;
+}
+
+.body_box{
+    /* border: 2px solid rgb(187, 255, 0); */
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+
+.experience{
+    /* border: 3px solid red; */
+    width: 50vw;
+    height: 100vh;
+    margin: auto;
+    margin-top: 150px;
+}
+
+
+.experience h1{
+    border: 3px solid  #00abf0;
+    text-align: center;
+    font-size:1.4rem;
+    margin-bottom: 10px;
+    border-radius:8px;
+}
+
+.experience #in_software{                     /*No comma tell CSS to target any h2 elements inside the .experience class */
+    border: 2px solid #00abf0;
+    border-radius:8px;               
+    font-size:1.4rem;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+#CRM,#marketplace,#custom_sites{    /*The commas between the selectors tell CSS that all the ids that I want all the items have the same property.*/
+    margin-bottom:30px;
+    word-spacing: 5px;
+    font-size: 1rem;
+}
+
+#CRM_header,#marketplace_header,#custom_sites_header{
+    color:#00abf0;
+    font-size: 1.3rem;
+}
+
+.experience #outside_software{                     
+    border: 2px solid #00abf0; 
+    border-radius:8px;            
+    font-size:1.4rem;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.experience #in_software,.experience #outside_software{
+    letter-spacing: 1px;
+}
+
+/*Learn More Box animation BEGIN*/
+#more_about_projects {
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid #00abf0;
+    border-radius: 10px;
+    color: white;
+    height: 100px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#more_about_projects::before {
+    content: ''; /* Render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place behind text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+#more_about_projects:hover::before {
+    width: 100%; /* Expand background */
+}
+
+
+/*Learn More Box animation END*/
+
+.outside_software_box{
+    /* border:3px solid salmon; */
+    height: 20%;
+}
+
+.outside_software_box p{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    font-size: 1rem;
+}
+
+.outside_software_box ul{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    max-width: 100vh;
+    max-height: 100px;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.outside_software_box> ul >li{    /*Greater than symbols help us target the list item nested inside the ul which is nested inside the "outside_software_box div */
+    margin-bottom:20px;
+}
+
+.outside_software_box> ul> li::marker {
+    color:#00abf0;
+  }
+
+#TM_2,#drone{
+    text-decoration: none;
+}
+
+#TM_2{
+    color:greenyellow;
+    font-weight: 600;
+}
+
+#drone{
+    color: rgb(7, 133, 218);
+    font-weight: 600;
+}
+
+/* Experience and Certifications */
+
+.body_details{
+    width:50vw;
+    height:50vh;
+    /* border: 3px solid darkorange; */
+
+    margin-left:20px;
+}
+
+.body_details h1{
+    border:3px solid #00abf0 ;
+    text-align: center;
+    height:10%;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:6px;
+}
+
+.body_details h2{
+    /* border:4px solid lightseagreen; */
+    height:4vh;
+    width:50vw;
+    margin-top:20px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#00abf0;
+    font-weight: bold;
+}
+
+
+/* Certificate Box Animations BEGIN*/
+.certificate_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:30px;
+}
+
+.certificate_box > a {
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    height: 10%;
+    margin: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.certificate_box > a::before {
+    content: ''; /* Add this to render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place it behind the text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+.certificate_box > a:hover::before {
+    width: 100%; /* Fill the box on hover */
+}
+
+/* Certificate Box Animations END*/
+
+
+.skills_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    width:50vw;
+    height:20vh;
+}
+
+.skills_box> a{
+    text-decoration: none;
+    border:2px solid #00abf0;
+    height:5%;
+    margin: 5px;
+    color:white;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size:0.8rem;
+    border-radius: 8px;
+}
+
+/* ABOUT SECTION END */
+
+
+.body_box footer{             /* We are targetting the footer in the conatainer in the about.html */
+    /* border: 2px solid maroon; */
+    height: 10vh;
+    width:40%;
+    position: absolute;
+    left:300px;
+    bottom: -1800px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION  */
+
+/* Portfolio sub section */
+.gallery{
+    height: 70vh;
+    width: 99%;
+    /* border: 2px solid magenta; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.image_section_1{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.image_section_2{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+
+
+
+.img_1_box{
+    /* border:2px solid magenta; */
+    height:400px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_pics{
+    height:20vh;
+    width:40vw;
+    border-radius: 8px;
+    border:3px solid #00abf0;
+}
+
+.img_1_box >a >h2{
+    border:3px solid #00abf0;
+    text-align:center;
+    color:#00abf0;
+    background-color: aliceblue;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    width: 40vw;
+    height: 6vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.img_1_box > a{
+    text-decoration: none;
+}
+
+.gallery footer{             /* We are targetting the footer in the conatainer in the portfolio.html */
+    /* border: 2px solid maroon; */
+    height: 3vh;
+    width:40%;
+    position: absolute;
+    left:0px;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION END */
+
+/*DESCRIPTION PAGES BEGIN */
+
+/* MARKETPLACE APP */
+.market_description{
+    /* border: 2px solid blueviolet; */
+    height: 1400px;
+}
+
+.market_description_box{
+    /* border: 2px solid greenyellow; */
+    width:100%;
+    height: 120vh;
+}
+
+.heading_image_box{
+    /* border: 3px solid turquoise; */
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#problem_image{
+    height:40vh;
+    width: 60vw;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+.problem_box_market{
+    /* border: 2px solid red; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.problem_box_market> .problem_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:20vw;
+    color: rgb(7, 133, 218);
+    font-size:1.2rem;
+    position: absolute;
+    left: 200px;
+    top: 600px;
+}
+
+.problem_box_market> .problem_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:93vw;
+    height:20vh;
+    color: rgb(255, 255, 255);
+    font-size: 0.85rem;
+    padding: 5px;
+    margin-top: -50px;
+}
+
+
+
+.problem_box_market> .problem_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 90vh;
+    margin-top: 100px;
+}
+
+/*SOLUTION */
+
+
+.solution_box_market{
+    /* border: 3px solid teal; */
+    width:50vw;
+    height: 30vh;
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 140px;
+}
+
+
+.solution_box_market> .solution_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 80vh;
+    margin-top: 100px;
+}
+
+.solution_box_market> .solution_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:20vw;
+    color: rgb(7, 133, 218);
+    font-size: 1.2rem;
+    position: absolute;
+    left: 200px;
+    top: 840px;
+   
+}
+
+.solution_box_market> .solution_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:93vw;
+    height:20vh;
+    color: rgb(255, 255, 255);
+    font-size: 0.85rem;
+    padding: 5px;
+    margin-top: 300px;
+}
+
+#solution_image{
+    height:400px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+
+
+#heading_image_box_robot > iframe{
+    border: 3px solid #00abf0;
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#heading_image_box_market > iframe{
+    border: 3px solid #00abf0;
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#heading_image_box_engine > iframe{
+    border: 3px solid #00abf0;
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#heading_image_box_crm > iframe{
+    border: 3px solid #00abf0;
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#MSS_link{
+    text-decoration: none;
+    color:aqua;
+
+}
+
+.market_description > footer {  /*Marketplace App Footer positioning */
+    position: absolute;
+    bottom: -580px;
+    left: 0px;
+    /* border: 2px solid magenta; */
+    width: 33vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+/*DESCRIPTION PAGES END */
+
+}
+
+/*MEDIA SET 3 */
+
+@media only screen and
+(min-width : 700px)
+and (max-width : 1000px)
+ {
+
+    /* HOME PAGE BEGIN */
+
+    /* NAV SECTION BEGIN */
+    body{
+        /* background-color: green; */
+        overflow-x: hidden;
+    }
+
+    .header{
+        padding: 20px 10px;
+        width: 100%;
+        /* border: 2px solid pink; */
+        align-items: center;
+        z-index:100;
+        margin: 0px 0px 2px 0px;
+        display: flex;
+        justify-content: space-evenly;
+    
+    }
+
+    #my_name{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .header .name_logo_box{
+        /* border:2px solid red; */
+        display: flex;
+        /* justify-content: space-between; */
+        width:300px;
+        align-items: center;
+        /* margin: 20px; */
+        /* letter-spacing: 3px; */
+        position: absolute;
+        left:5px;
+    }
+    
+    .header #mss_logo{
+        border: 3px solid #00abf0;
+        height: 50px;
+        margin-left: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 250px;
+        top: 30px;
+        margin-right: 20px;
+    }
+    
+    
+    
+    .logo{
+        font-size:35px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: bold
+    }
+
+    .navbar{
+        /* display: flex;
+        justify-content: space-evenly;  */
+        /* border: 2px solid magenta; */
+        margin-right: 40px;
+        width: 150px;
+       
+    }
+    
+    .navbar a {
+        font-size: 20px;
+        color:#ededed;
+        font-weight: 500;
+        text-decoration:none;
+        margin-left: 20px;
+        padding-right:40px;
+        /* border: 2px solid orange; */
+        display:flex;
+        justify-content: space-between;
+        position: relative;
+        right: -200px;
+    }
+    
+
+
+    /* NAV SECTION END */
+
+    .home_content h1{    /* Media queries are like if stateements for CSS. Here we're saying, IF the screen shrinks to a width of 600px then reduce the font size of h1 */
+        font-size: 2rem;
+        font-weight:700;
+        /* letter-spacing: 2px; */
+        word-spacing: 3px;
+        /* border: 2px solid red; */
+        height: 30px;
+       
+    }
+
+    .home_content h3{
+        font-size: 1.5rem;
+        font-weight:700px;
+        color:#00abf0;
+        /* border: 2px solid red; */
+        height: 30px;
+        position: absolute;
+        top: 80px;
+    }
+
+    .home_content p{
+        font-size: 1rem;
+        /* border: 2px solid teal; */
+        margin-bottom:2px;
+        margin-top:-100px;
+       
+    }
+
+    .profile_picture h3{
+        /* border:solid 2px yellow; */
+        width:20vh;
+        margin: auto;
+        position: relative;
+        top: 300px;
+        left: 300px;
+        text-align: center;
+        color:#00abf0;
+        font-size : 0.7rem;
+    
+    }
+    
+    .profile_picture #pp {
+        position: relative;
+        top:300px;
+        left: 350px;
+        border: 4px solid #00abf0;
+        width: 60%;
+        height: 60%;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 30px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        transition: background-color 3s; /* Smooth transition for background color */
+    }
+
+    .sm_icons {
+        text-align: center;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: -80px;
+        width: 200px;
+        height: 30px;
+        /* margin-top: 200px; */
+        /* border: 2px solid magenta;   */
+    }
+
+    .sm_icons > a{
+        height: 35px;
+        width: 35px;
+    }
+
+
+    /* HOME PAGE END */
+
+     /* ABOUT SECTION */
+
+.intro_box{
+    /* border: 2px solid magenta; */
+    height:300px;
+    width:100%;
+    margin-top:5px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom:40px; */
+
+}
+
+.intro_box> #mugg_shot{
+    height:30vh;
+    width:30vh;
+    /* border:2px solid darkgreen; */
+    margin:auto;
+    margin-top:200px;
+    border-radius: 50%;
+    border-bottom: 3px solid #00abf0 ;
+   
+}
+
+.intro_box> #mugg_shot:hover{
+    background-color:#00abf0
+}
+
+.intro_details{
+    margin:auto;
+    margin-top:10px;
+    /* border:2px solid white; */
+    width: 60vw;
+    height: 78vh;
+    /* font-size:1.3rem; */
+    padding: 0px 0px 20px 20px;
+    /* margin-bottom: 5px; */
+    /* margin-top: 10px; */
+}
+
+.intro_details h1{
+    /* border:2px solid mediumseagreen; */
+    text-align: center;
+    height:8%;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#00abf0;
+    margin-bottom: 10px;
+}
+
+.intro_details p{
+    /* border:4px solid lightseagreen; */
+    height:78%;
+    font-size: 1.4rem;
+}
+
+.body_box{
+    /* border: 2px solid rgb(187, 255, 0); */
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.experience{
+    /* border: 3px solid red; */
+    width: 50vw;
+    height: 100vh;
+    margin: auto;
+    margin-top: 150px;
+}
+
+
+.experience h1{
+    border: 3px solid  #00abf0;
+    text-align: center;
+    font-size:1.4rem;
+    margin-bottom: 10px;
+    border-radius:8px;
+}
+
+.experience #in_software{                     /*No comma tell CSS to target any h2 elements inside the .experience class */
+    border: 2px solid #00abf0;
+    border-radius:8px;               
+    font-size:1.4rem;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+#CRM,#marketplace,#custom_sites{    /*The commas between the selectors tell CSS that all the ids that I want all the items have the same property.*/
+    margin-bottom:30px;
+    word-spacing: 5px;
+    font-size: 1rem;
+}
+
+#CRM_header,#marketplace_header,#custom_sites_header{
+    color:#00abf0;
+    font-size: 1.3rem;
+}
+
+.experience #outside_software{                     
+    border: 2px solid #00abf0; 
+    border-radius:8px;            
+    font-size:1.4rem;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.experience #in_software,.experience #outside_software{
+    letter-spacing: 1px;
+}
+
+/*Learn More Box animation BEGIN*/
+#more_about_projects {
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid #00abf0;
+    border-radius: 10px;
+    color: white;
+    height: 100px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#more_about_projects::before {
+    content: ''; /* Render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place behind text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+#more_about_projects:hover::before {
+    width: 100%; /* Expand background */
+}
+
+
+/*Learn More Box animation END*/
+
+.outside_software_box{
+    /* border:3px solid salmon; */
+    height: 20%;
+}
+
+.outside_software_box p{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    font-size: 1rem;
+}
+
+.outside_software_box ul{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    max-width: 100vh;
+    max-height: 100px;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.outside_software_box> ul >li{    /*Greater than symbols help us target the list item nested inside the ul which is nested inside the "outside_software_box div */
+    margin-bottom:20px;
+}
+
+.outside_software_box> ul> li::marker {
+    color:#00abf0;
+  }
+
+#TM_2,#drone{
+    text-decoration: none;
+}
+
+#TM_2{
+    color:greenyellow;
+    font-weight: 600;
+}
+
+#drone{
+    color: rgb(7, 133, 218);
+    font-weight: 600;
+}
+
+/* Experience and Certifications */
+
+.body_details{
+    width:40vw;
+    height:50vh;
+    /* border: 3px solid darkorange; */
+
+    /* margin:auto; */
+}
+
+.body_details h1{
+    border:3px solid #00abf0 ;
+    text-align: center;
+    height:10%;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:6px;
+}
+
+.body_details h2{
+    /* border:4px solid lightseagreen; */
+    height:4vh;
+    width:40vw;
+    margin-top:20px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#00abf0;
+    font-weight: bold;
+}
+
+/* Certificate Box Animations BEGIN*/
+.certificate_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:30px;
+}
+
+.certificate_box > a {
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    height: 10%;
+    margin: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.certificate_box > a::before {
+    content: ''; /* Add this to render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place it behind the text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+.certificate_box > a:hover::before {
+    width: 100%; /* Fill the box on hover */
+}
+
+/* Certificate Box Animations END*/
+
+
+.skills_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    width:40vw;
+    height:20vh;
+}
+
+.skills_box> a{
+    text-decoration: none;
+    border:2px solid #00abf0;
+    height:5%;
+    margin: 5px;
+    color:white;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size:0.8rem;
+    border-radius: 8px;
+}
+
+/* ABOUT SECTION END */
+
+
+.body_box footer{             /* We are targetting the footer in the conatainer in the about.html */
+    /* border: 2px solid maroon; */
+    height: 10vh;
+    width:40%;
+    position: absolute;
+    left:420px;
+    bottom: -1300px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+
+/* PORTFOLIO SECTION BEGIN */
+.gallery{
+    height: 80vh;
+    width: 99%;
+    /* border: 2px solid magenta; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.image_section_1{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.image_section_2{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+
+
+
+.img_1_box{
+    /* border:2px solid magenta; */
+    height:400px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_pics{
+    height:30vh;
+    width:40vw;
+    border-radius: 8px;
+    border:3px solid #00abf0;
+}
+
+.img_1_box >a >h2{
+    border:3px solid #00abf0;
+    text-align:center;
+    color:#00abf0;
+    background-color: aliceblue;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    width: 40vw;
+    height: 6vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.img_1_box > a{
+    text-decoration: none;
+}
+
+.gallery footer{             /* We are targetting the footer in the conatainer in the portfolio.html */
+    /* border: 2px solid maroon; */
+    height: 3vh;
+    width:30%;
+    position: absolute;
+    left:0px;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION END */
+
+/*DESCRIPTION PAGES BEGIN */
+
+/* MARKETPLACE APP */
+.market_description{
+    /* border: 2px solid blueviolet; */
+    height: 1400px;
+}
+
+.market_description_box{
+    /* border: 2px solid greenyellow; */
+    width:100%;
+    height: 120vh;
+}
+
+.heading_image_box{
+    /* border: 3px solid turquoise; */
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#problem_image{
+    height:40vh;
+    width: 60vw;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+.problem_box_market{
+    /* border: 2px solid red; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.problem_box_market> .problem_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:98vw;
+    color: rgb(7, 133, 218);
+    font-size:1.8rem;
+    position: absolute;
+    /* left: 250px; */
+    top: 535px;
+}
+
+.problem_box_market> .problem_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:90vw;
+    height:23vh;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    padding: 5px;
+    margin-top: -50px;
+    margin-right: 30px;
+}
+
+
+
+.problem_box_market> .problem_description{
+    /* border: 2px solid gray; */
+    height: 50vh;
+    width: 90vh;
+    margin-top: 100px;
+}
+
+/*SOLUTION */
+
+
+.solution_box_market{
+    /* border: 3px solid teal; */
+    width:96vw;
+    height: 63vh;
+    /* display:flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
+    margin-top: 200px;
+   
+} 
+
+
+.solution_box_market> .solution_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 80vh;
+    margin-top: 100px;
+}
+
+.solution_box_market> .solution_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:91vw;
+    color: rgb(7, 133, 218);
+    font-size: 1.8rem;
+    position: absolute;
+    /* left: 250px; */
+    top: 820px;
+   
+}
+
+.solution_box_market> .solution_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:100%;
+    height:23vh;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    padding: 5px;
+    margin-top: 250px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#solution_image{
+    height:400px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+
+
+#heading_image_box_robot > iframe{
+    border: 3px solid #00abf0;
+    width:70vw;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#heading_image_box_market > iframe{
+    border: 3px solid #00abf0;
+    width:70vw;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+    /* margin-right: 200px; */
+}
+
+#heading_image_box_engine > iframe{
+    border: 3px solid #00abf0;
+    width:70vw;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#heading_image_box_crm > iframe{
+    border: 3px solid #00abf0;
+    width:70vw;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 100px;
+}
+
+#MSS_link{
+    text-decoration: none;
+    color:aqua;
+
+}
+
+.market_description > footer {  /*Marketplace App Footer positioning */
+    position: absolute;
+    bottom: -580px;
+    left: 0px;
+    /* border: 2px solid magenta; */
+    width: 33vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+/*DESCRIPTION PAGES END */
+
+}
+
+
+/* MEDIA SET 4 */ 
+
+@media only screen and
+(min-width : 1000px)
+and (max-width : 1200px)
+ {
+
+    /* HOME PAGE BEGIN */
+
+    /* NAV SECTION BEGIN */
+    body{
+        /* background-color: turquoise; */
+        overflow-x: hidden;
+    }
+
+    .header{
+        padding: 20px 10px;
+        width: 100%;
+        /* border: 2px solid pink; */
+        align-items: center;
+        z-index:100;
+        margin: 0px 0px 2px 0px;
+        display: flex;
+        justify-content: space-evenly;
+    
+    }
+
+    #my_name{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .header .name_logo_box{
+        /* border:2px solid red; */
+        display: flex;
+        /* justify-content: space-between; */
+        width:300px;
+        align-items: center;
+        /* margin: 20px; */
+        /* letter-spacing: 3px; */
+        position: absolute;
+        left:5px;
+    }
+    
+    .header #mss_logo{
+        border: 3px solid #00abf0;
+        height: 50px;
+        margin-left: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 300px;
+        top: 30px;
+        margin-right: 20px;
+    }
+    
+    
+    
+    .logo{
+        font-size:35px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: bold
+    }
+
+    .navbar{
+        /* display: flex;
+        justify-content: space-evenly;  */
+        /* border: 2px solid magenta; */
+        margin-right: 40px;
+        width: 150px;
+       
+    }
+    
+    .navbar a {
+        font-size: 20px;
+        color:#ededed;
+        font-weight: 500;
+        text-decoration:none;
+        margin-left: 20px;
+        padding-right:40px;
+        /* border: 2px solid orange; */
+        display:flex;
+        justify-content: space-between;
+        position: relative;
+        right: -200px;
+    }
+    
+
+
+    /* NAV SECTION END */
+
+    .home_content h1{    /* Media queries are like if stateements for CSS. Here we're saying, IF the screen shrinks to a width of 600px then reduce the font size of h1 */
+        font-size: 2rem;
+        font-weight:700;
+        /* letter-spacing: 2px; */
+        word-spacing: 3px;
+        /* border: 2px solid red; */
+        height: 30px;
+       
+    }
+
+    .home_content h3{
+        font-size: 1.5rem;
+        font-weight:700px;
+        color:#00abf0;
+        /* border: 2px solid red; */
+        height: 30px;
+        position: absolute;
+        top: 80px;
+        margin-bottom: 100px;
+       
+    }
+
+    .home_content p{
+        font-size: 1.1rem;
+        /* border: 2px solid teal; */
+        margin-bottom:2px;
+        margin-top:-100px;
+        /* width: 100vw; */
+       
+    }
+
+    .profile_picture h3{
+        /* border:solid 2px yellow; */
+        width:25vh;
+        margin: auto;
+        position: relative;
+        top: 280px;
+        left: 230px;
+        text-align: center;
+        color:#00abf0;
+        font-size : 0.7rem;
+    
+    }
+    
+    .profile_picture #pp {
+        position: relative;
+        top:280px;
+        left: 290px;
+        border: 4px solid #00abf0;
+        width: 60%;
+        height: 60%;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 30px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        transition: background-color 3s; /* Smooth transition for background color */
+    }
+
+    .sm_icons {
+        text-align: center;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: -80px;
+        width: 200px;
+        height: 30px;
+        /* margin-top: 200px; */
+        /* border: 2px solid magenta;   */
+    }
+
+    .sm_icons > a{
+        height: 35px;
+        width: 35px;
+    }
+
+
+    /* HOME PAGE END */
+
+      /* ABOUT SECTION */
+
+.intro_box{
+    /* border: 2px solid magenta; */
+    height:80vh;
+    width:100%;
+    margin-top:5px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom:40px; */
+
+}
+
+.intro_box> #mugg_shot{
+    height:50vh;
+    width:50vh;
+    /* border:2px solid darkgreen; */
+    margin:auto;
+    margin-top:200px;
+    border-radius: 50%;
+    border-bottom: 3px solid #00abf0 ;
+   
+}
+
+.intro_box> #mugg_shot:hover{
+    background-color:#00abf0
+}
+
+.intro_details{
+    margin:auto;
+    margin-top:10px;
+    /* border:2px solid white; */
+    width: 50vw;
+    height: 78vh;
+    /* font-size:1.3rem; */
+    padding: 0px 0px 20px 20px;
+    /* margin-bottom: 5px; */
+    /* margin-top: 10px; */
+}
+
+.intro_details h1{
+    /* border:2px solid mediumseagreen; */
+    text-align: center;
+    height:8%;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#00abf0;
+    margin-bottom: 10px;
+}
+
+.intro_details p{
+    /* border:4px solid lightseagreen; */
+    height:78%;
+    font-size: 1.6rem;
+}
+
+.body_box{
+    /* border: 2px solid rgb(187, 255, 0); */
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.experience{
+    /* border: 3px solid red; */
+    width: 53vw;
+    height: 100vh;
+    margin: auto;
+    margin-top: -150px;
+}
+
+
+.experience h1{
+    border: 3px solid  #00abf0;
+    text-align: center;
+    font-size:1.6rem;
+    margin-bottom: 10px;
+    border-radius:8px;
+}
+
+.experience #in_software{                     /*No comma tell CSS to target any h2 elements inside the .experience class */
+    border: 2px solid #00abf0;
+    border-radius:8px;               
+    font-size:1.6rem;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+#CRM,#marketplace,#custom_sites{    /*The commas between the selectors tell CSS that all the ids that I want all the items have the same property.*/
+    margin-bottom:30px;
+    word-spacing: 5px;
+    font-size: 1.3rem;
+}
+
+#CRM_header,#marketplace_header,#custom_sites_header{
+    color:#00abf0;
+    font-size: 1.5rem;
+}
+
+.experience #outside_software{                     
+    border: 2px solid #00abf0; 
+    border-radius:8px;            
+    font-size:1.6rem;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.experience #in_software,.experience #outside_software{
+    letter-spacing: 1px;
+}
+
+/*Learn More Box animation BEGIN*/
+#more_about_projects {
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 2px solid #00abf0;
+    border-radius: 10px;
+    color: white;
+    height: 100px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#more_about_projects::before {
+    content: ''; /* Render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place behind text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+#more_about_projects:hover::before {
+    width: 100%; /* Expand background */
+}
+
+
+/*Learn More Box animation END*/
+
+.outside_software_box{
+    /* border:3px solid salmon; */
+    height: 20%;
+}
+
+.outside_software_box p{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    font-size: 1.3rem;
+}
+
+.outside_software_box ul{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    max-width: 100vh;
+    max-height: 100px;
+    padding: 20px;
+    font-size: 1.3rem;
+}
+
+.outside_software_box> ul >li{    /*Greater than symbols help us target the list item nested inside the ul which is nested inside the "outside_software_box div */
+    margin-bottom:20px;
+}
+
+.outside_software_box> ul> li::marker {
+    color:#00abf0;
+  }
+
+#TM_2,#drone{
+    text-decoration: none;
+}
+
+#TM_2{
+    color:greenyellow;
+    font-weight: 600;
+}
+
+#drone{
+    color: rgb(7, 133, 218);
+    font-weight: 600;
+}
+
+/* Experience and Certifications */
+
+.body_details{
+    width:40vw;
+    height:50vh;
+    /* border: 3px solid darkorange; */
+    /* position:absolute;
+    top: 1000px;
+    left: 500px;
+    margin-left: 500px; */
+}
+
+.body_details h1{
+    border:3px solid #00abf0 ;
+    text-align: center;
+    height:10%;
+    font-size: 1.7rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:6px;
+}
+
+.body_details h2{
+    /* border:4px solid lightseagreen; */
+    height:4vh;
+    width:40vw;
+    margin-top:20px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#00abf0;
+    font-weight: bold;
+}
+
+/* Certificate Box Animations BEGIN*/
+.certificate_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:30px;
+}
+
+.certificate_box > a {
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    height: 10%;
+    margin: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 8px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.certificate_box > a::before {
+    content: ''; /* Add this to render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place it behind the text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+.certificate_box > a:hover::before {
+    width: 100%; /* Fill the box on hover */
+}
+
+/* Certificate Box Animations END*/
+
+
+.skills_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    width:40vw;
+    height:30vh;
+}
+
+.skills_box> a{
+    text-decoration: none;
+    border:2px solid #00abf0;
+    height:5%;
+    margin: 5px;
+    color:white;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size:1rem;
+    border-radius: 8px;
+}
+
+/* ABOUT SECTION END */
+
+
+.body_box footer{             /* We are targetting the footer in the conatainer in the about.html */
+    /* border: 2px solid maroon; */
+    height: 10vh;
+    width:20%;
+    position: absolute;
+    left:10px;
+    bottom: -1600px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION BEGIN */
+.gallery{
+    height: 80vh;
+    width: 99%;
+    /* border: 2px solid magenta; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.image_section_1{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    
+}
+
+.image_section_2{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+
+
+
+.img_1_box{
+    /* border:2px solid magenta; */
+    height:400px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_pics{
+    height:30vh;
+    width:38vw;
+    border-radius: 8px;
+    border:3px solid #00abf0;
+}
+
+.img_1_box >a >h2{
+    border:3px solid #00abf0;
+    text-align:center;
+    color:#00abf0;
+    background-color: aliceblue;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    width: 38vw;
+    height: 4vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.img_1_box > a{
+    text-decoration: none;
+}
+
+.gallery footer{             /* We are targetting the footer in the conatainer in the portfolio.html */
+    /* border: 2px solid maroon; */
+    height: 2vh;
+    width:20%;
+    position: absolute;
+    left:50px;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION END */
+
+/*DESCRIPTION PAGES BEGIN */
+
+/* MARKETPLACE APP */
+.market_description{
+    /* border: 2px solid blueviolet; */
+    height: 1400px;
+}
+
+.market_description_box{
+    /* border: 2px solid greenyellow; */
+    width:100%;
+    height: 120vh;
+}
+
+.heading_image_box{
+    /* border: 3px solid turquoise; */
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#problem_image{
+    height:40vh;
+    width:50vw;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+.problem_box_market{
+    /* border: 2px solid red; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.problem_box_market> .problem_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:80vw;
+    color: rgb(7, 133, 218);
+    font-size:1.8rem;
+    position: absolute;
+    right: 100px;
+    top: 535px;
+}
+
+.problem_box_market> .problem_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:110%;
+    height:24vh;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    padding: 5px;
+    margin-top: -50px;
+    margin-right: 30px;
+}
+
+
+
+.problem_box_market> .problem_description{
+    /* border: 2px solid gray; */
+    height: 50vh;
+    width: 90vh;
+    margin-top: 100px;
+}
+
+/*SOLUTION */
+
+
+.solution_box_market{
+    /* border: 3px solid teal; */
+    width:96vw;
+    height: 63vh;
+    /* display:flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
+    margin-top: 200px;
+   
+} 
+
+
+.solution_box_market> .solution_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 80vh;
+    margin-top: 100px;
+}
+
+.solution_box_market> .solution_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:80vw;
+    color: rgb(7, 133, 218);
+    font-size: 1.8rem;
+    position: absolute;
+    right: 100px;
+    top: 820px;
+   
+}
+
+.solution_box_market> .solution_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:120%;
+    height:24vh;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    padding: 5px;
+    margin-top: 250px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    position:relative;
+    right: 10px;
+}
+
+#solution_image{
+    height:400px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+
+
+#heading_image_box_robot > iframe{
+    border: 3px solid #00abf0;
+    width:50vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 300px;
+}
+
+#heading_image_box_market > iframe{
+    border: 3px solid #00abf0;
+    width:50vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 200px;
+    /* margin-right: 200px; */
+}
+
+#heading_image_box_engine > iframe{
+    border: 3px solid #00abf0;
+    width:50vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 200px;
+}
+
+#heading_image_box_crm > iframe{
+    border: 3px solid #00abf0;
+    width:50vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 200px;
+}
+
+#MSS_link{
+    text-decoration: none;
+    color:aqua;
+
+}
+
+.market_description > footer {  /*Marketplace App Footer positioning */
+    position: absolute;
+    bottom: -580px;
+    left: 0px;
+    /* border: 2px solid magenta; */
+    width: 33vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+/*DESCRIPTION PAGES END */
+
+
+}
+
+/* MEDIA SET 5 */
+
+@media only screen and
+(min-width : 1200px)
+and (max-width : 1400px)
+ {
+
+    /* HOME PAGE BEGIN */
+
+    /* NAV SECTION BEGIN */
+    body{
+        /* background-color: yellowgreen; */
+        overflow-x: hidden;
+    }
+
+    .header{
+        padding: 20px 10px;
+        width: 100%;
+        /* border: 2px solid pink; */
+        align-items: center;
+        z-index:100;
+        margin: 0px 0px 2px 0px;
+        display: flex;
+        justify-content: space-evenly;
+    
+    }
+
+    #my_name{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .header .name_logo_box{
+        /* border:2px solid red; */
+        display: flex;
+        /* justify-content: space-between; */
+        width:300px;
+        align-items: center;
+        /* margin: 20px; */
+        /* letter-spacing: 3px; */
+        position: absolute;
+        left:5px;
+    }
+    
+    .header #mss_logo{
+        border: 3px solid #00abf0;
+        height: 50px;
+        margin-left: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 300px;
+        top: 30px;
+        margin-right: 20px;
+    }
+    
+    
+    
+    .logo{
+        font-size:35px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: bold
+    }
+
+    .navbar{
+        /* display: flex;
+        justify-content: space-evenly;  */
+        /* border: 2px solid magenta; */
+        margin-right: 40px;
+        width: 150px;
+       
+    }
+    
+    .navbar a {
+        font-size: 20px;
+        color:#ededed;
+        font-weight: 500;
+        text-decoration:none;
+        margin-left: 20px;
+        padding-right:40px;
+        /* border: 2px solid orange; */
+        display:flex;
+        justify-content: space-between;
+        position: relative;
+        right: -200px;
+    }
+    
+
+
+    /* NAV SECTION END */
+
+    .home_content h1{    /* Media queries are like if stateements for CSS. Here we're saying, IF the screen shrinks to a width of 600px then reduce the font size of h1 */
+        font-size: 2rem;
+        font-weight:700;
+        /* letter-spacing: 2px; */
+        word-spacing: 3px;
+        /* border: 2px solid red; */
+        height: 30px;
+       
+    }
+
+    .home_content h3{
+        font-size: 1.5rem;
+        font-weight:700px;
+        color:#00abf0;
+        /* border: 2px solid red; */
+        height: 30px;
+        position: absolute;
+        top: 80px;
+        margin-bottom: 100px;
+       
+    }
+
+    .home_content p{
+        font-size: 1.2rem;
+        /* border: 2px solid teal; */
+        margin-bottom:2px;
+        margin-top:-10px;
+        /* width: 100vw; */
+       
+    }
+
+    .profile_picture h3{
+        /* border:solid 2px yellow; */
+        width:25vh;
+        margin: auto;
+        position: relative;
+        top: 50px;
+        left: 250px;
+        text-align: center;
+        color:#00abf0;
+        font-size : 0.7rem;
+    
+    }
+    
+    .profile_picture #pp {
+        position: relative;
+        top:50px;
+        left: 300px;
+        border: 4px solid #00abf0;
+        width: 70%;
+        height: 70%;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 30px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        transition: background-color 3s; /* Smooth transition for background color */
+    }
+
+    .sm_icons {
+        text-align: center;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: -80px;
+        width: 200px;
+        height: 30px;
+        /* margin-top: 200px; */
+        /* border: 2px solid magenta;   */
+    }
+
+    .sm_icons > a{
+        height: 35px;
+        width: 35px;
+    }
+
+
+    /* HOME PAGE END */
+
+
+  /* ABOUT SECTION BEGIN */
+
+.intro_box{
+    /* border: 2px solid magenta; */
+    height:80vh;
+    width:100%;
+    margin-top:5px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom:40px; */
+
+}
+
+.intro_box> #mugg_shot{
+    height:50vh;
+    width:50vh;
+    /* border:2px solid darkgreen; */
+    margin:auto;
+    margin-top:200px;
+    border-radius: 50%;
+    border-bottom: 3px solid #00abf0 ;
+   
+}
+
+.intro_box> #mugg_shot:hover{
+    background-color:#00abf0
+}
+
+.intro_details{
+    margin:auto;
+    margin-top:10px;
+    /* border:2px solid white; */
+    width: 50vw;
+    height: 78vh;
+    /* font-size:1.3rem; */
+    padding: 0px 0px 20px 20px;
+    /* margin-bottom: 5px; */
+    /* margin-top: 10px; */
+}
+
+.intro_details h1{
+    /* border:2px solid mediumseagreen; */
+    text-align: center;
+    height:8%;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#00abf0;
+    margin-bottom: 10px;
+}
+
+.intro_details p{
+    /* border:4px solid lightseagreen; */
+    height:78%;
+    font-size: 1.6rem;
+}
+
+.body_box{
+    /* border: 2px solid rgb(187, 255, 0); */
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.experience{
+    /* border: 3px solid red; */
+    width: 53vw;
+    height: 100vh;
+    margin: auto;
+    margin-top: -150px;
+}
+
+
+.experience h1{
+    border: 3px solid  #00abf0;
+    text-align: center;
+    font-size:1.6rem;
+    margin-bottom: 10px;
+    border-radius:8px;
+}
+
+.experience #in_software{                     /*No comma tell CSS to target any h2 elements inside the .experience class */
+    border: 2px solid #00abf0;
+    border-radius:8px;               
+    font-size:1.6rem;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+#CRM,#marketplace,#custom_sites{    /*The commas between the selectors tell CSS that all the ids that I want all the items have the same property.*/
+    margin-bottom:30px;
+    word-spacing: 5px;
+    font-size: 1.3rem;
+}
+
+#CRM_header,#marketplace_header,#custom_sites_header{
+    color:#00abf0;
+    font-size: 1.5rem;
+}
+
+.experience #outside_software{                     
+    border: 2px solid #00abf0; 
+    border-radius:8px;            
+    font-size:1.6rem;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.experience #in_software,.experience #outside_software{
+    letter-spacing: 1px;
+}
+
+/*Learn More Box animation BEGIN*/
+#more_about_projects {
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 2px solid #00abf0;
+    border-radius: 10px;
+    color: white;
+    height: 100px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#more_about_projects::before {
+    content: ''; /* Render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place behind text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+#more_about_projects:hover::before {
+    width: 100%; /* Expand background */
+}
+
+
+/*Learn More Box animation END*/
+
+.outside_software_box{
+    /* border:3px solid salmon; */
+    height: 20%;
+}
+
+.outside_software_box p{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    font-size: 1.3rem;
+}
+
+.outside_software_box ul{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    max-width: 100vh;
+    max-height: 100px;
+    padding: 20px;
+    font-size: 1.3rem;
+}
+
+.outside_software_box> ul >li{    /*Greater than symbols help us target the list item nested inside the ul which is nested inside the "outside_software_box div */
+    margin-bottom:20px;
+}
+
+.outside_software_box> ul> li::marker {
+    color:#00abf0;
+  }
+
+#TM_2,#drone{
+    text-decoration: none;
+}
+
+#TM_2{
+    color:greenyellow;
+    font-weight: 600;
+}
+
+#drone{
+    color: rgb(7, 133, 218);
+    font-weight: 600;
+}
+
+/* Experience and Certifications */
+
+.body_details{
+    width:40vw;
+    height:50vh;
+    /* border: 3px solid darkorange; */
+    /* position:absolute;
+    top: 1000px;
+    left: 500px;
+    margin-left: 500px; */
+}
+
+.body_details h1{
+    border:3px solid #00abf0 ;
+    text-align: center;
+    height:10%;
+    font-size: 1.7rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:6px;
+}
+
+.body_details h2{
+    /* border:4px solid lightseagreen; */
+    height:4vh;
+    width:40vw;
+    margin-top:20px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#00abf0;
+    font-weight: bold;
+}
+
+/* Certificate Box Animations BEGIN*/
+.certificate_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:30px;
+}
+
+.certificate_box > a {
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    height: 10%;
+    margin: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 8px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.certificate_box > a::before {
+    content: ''; /* Add this to render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place it behind the text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+.certificate_box > a:hover::before {
+    width: 100%; /* Fill the box on hover */
+}
+
+/* Certificate Box Animations END*/
+
+
+.skills_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    width:40vw;
+    height:30vh;
+}
+
+.skills_box> a{
+    text-decoration: none;
+    border:2px solid #00abf0;
+    height:5%;
+    margin: 5px;
+    color:white;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size:1rem;
+    border-radius: 8px;
+}
+
+/* ABOUT SECTION END */
+
+
+.body_box footer{             /* We are targetting the footer in the conatainer in the about.html */
+    /* border: 2px solid maroon; */
+    height: 10vh;
+    width:20%;
+    position: absolute;
+    left:10px;
+    bottom: -1420px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION BEGIN */
+.gallery{
+    height: 80vh;
+    width: 99%;
+    /* border: 2px solid magenta; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.image_section_1{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    
+}
+
+.image_section_2{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+
+
+
+.img_1_box{
+    /* border:2px solid magenta; */
+    height:400px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_pics{
+    height:30vh;
+    width:38vw;
+    border-radius: 8px;
+    border:3px solid #00abf0;
+}
+
+.img_1_box >a >h2{
+    border:3px solid #00abf0;
+    text-align:center;
+    color:#00abf0;
+    background-color: aliceblue;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    width: 38vw;
+    height: 4vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.img_1_box > a{
+    text-decoration: none;
+}
+
+.gallery footer{             /* We are targetting the footer in the conatainer in the portfolio.html */
+    /* border: 2px solid maroon; */
+    height: 2vh;
+    width:20%;
+    position: absolute;
+    left:50px;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION END */
+
+/*DESCRIPTION PAGES BEGIN */
+
+/* MARKETPLACE APP */
+.market_description{
+    /* border: 2px solid blueviolet; */
+    height: 1400px;
+}
+
+.market_description_box{
+    /* border: 2px solid greenyellow; */
+    width:100%;
+    height: 120vh;
+}
+
+.heading_image_box{
+    /* border: 3px solid turquoise; */
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#problem_image{
+    height:40vh;
+    width: 50vw;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+.problem_box_market{
+    /* border: 2px solid red; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.problem_box_market> .problem_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:90%;
+    color: rgb(7, 133, 218);
+    font-size:1.8rem;
+    position: absolute;
+    right: 100px;
+    top: 535px;
+}
+
+.problem_box_market> .problem_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:110%;
+    height:25vh;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    padding: 5px;
+    margin-top: -50px;
+    position:relative;
+    right: 50px;
+}
+
+
+
+.problem_box_market> .problem_description{
+    /* border: 2px solid gray; */
+    height: 50vh;
+    width: 90vh;
+    margin-top: 100px;
+}
+
+/*SOLUTION */
+
+
+.solution_box_market{
+    /* border: 3px solid teal; */
+    width:96vw;
+    height: 63vh;
+    /* display:flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
+    margin-top: 200px;
+   
+} 
+
+
+.solution_box_market> .solution_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 80vh;
+    margin-top: 100px;
+}
+
+.solution_box_market> .solution_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:91vw;
+    color: rgb(7, 133, 218);
+    font-size: 1.8rem;
+    position: absolute;
+    right: 100px;
+    top: 820px;
+   
+}
+
+.solution_box_market> .solution_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:130%;
+    height:25vh;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    padding: 5px;
+    margin-top: 250px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 10px;
+}
+
+#solution_image{
+    height:400px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+
+
+#heading_image_box_robot > iframe{
+    border: 3px solid #00abf0;
+    width:50vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 300px;
+}
+
+#heading_image_box_market > iframe{
+    border: 3px solid #00abf0;
+    width:50vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 300px;
+    /* margin-right: 200px; */
+}
+
+#heading_image_box_engine > iframe{
+    border: 3px solid #00abf0;
+    width:50vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 300px;
+}
+
+#heading_image_box_crm > iframe{
+    border: 3px solid #00abf0;
+    width:50vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 300px;
+}
+
+#MSS_link{
+    text-decoration: none;
+    color:aqua;
+
+}
+
+.market_description > footer {  /*Marketplace App Footer positioning */
+    position: absolute;
+    bottom: -580px;
+    left: 0px;
+    /* border: 2px solid magenta; */
+    width: 25vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+/*DESCRIPTION PAGES END */
+
+/* MEDIA SET 6 */
+
+}
+
+@media only screen and
+(min-width : 1400px)
+and (max-width : 1600px)
+ {
+
+    /* HOME PAGE BEGIN */
+
+    /* NAV SECTION BEGIN */
+    body{
+        /* background-color: brown; */
+        overflow-x: hidden;
+    }
+
+    .header{
+        padding: 20px 10px;
+        width: 100%;
+        /* border: 2px solid pink; */
+        align-items: center;
+        z-index:100;
+        margin: 0px 0px 2px 0px;
+        display: flex;
+        justify-content: space-evenly;
+    
+    }
+
+    #my_name{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .header .name_logo_box{
+        /* border:2px solid red; */
+        display: flex;
+        /* justify-content: space-between; */
+        width:300px;
+        align-items: center;
+        /* margin: 20px; */
+        /* letter-spacing: 3px; */
+        position: absolute;
+        left:5px;
+    }
+    
+    .header #mss_logo{
+        border: 3px solid #00abf0;
+        height: 50px;
+        margin-left: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 280px;
+        top: 30px;
+        margin-right: 20px;
+    }
+    
+    
+    
+    .logo{
+        font-size:35px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: bold
+    }
+
+    .navbar{
+        /* display: flex;
+        justify-content: space-evenly;  */
+        /* border: 2px solid magenta; */
+        margin-right: 40px;
+        width: 150px;
+       
+    }
+    
+    .navbar a {
+        font-size: 20px;
+        color:#ededed;
+        font-weight: 500;
+        text-decoration:none;
+        margin-left: 20px;
+        padding-right:40px;
+        /* border: 2px solid orange; */
+        display:flex;
+        justify-content: space-between;
+        position: relative;
+        right: -300px;
+    }
+    
+
+
+    /* NAV SECTION END */
+
+    .home_content h1{    /* Media queries are like if stateements for CSS. Here we're saying, IF the screen shrinks to a width of 600px then reduce the font size of h1 */
+        font-size: 2rem;
+        font-weight:700;
+        /* letter-spacing: 2px; */
+        word-spacing: 3px;
+        /* border: 2px solid red; */
+        height: 30px;
+       
+    }
+
+    .home_content h3{
+        font-size: 1.5rem;
+        font-weight:700px;
+        color:#00abf0;
+        /* border: 2px solid red; */
+        height: 30px;
+        position: absolute;
+        top: 80px;
+        margin-bottom: 100px;
+       
+    }
+
+    .home_content p{
+        font-size: 1.2rem;
+        /* border: 2px solid teal; */
+        margin-bottom:2px;
+        margin-top:-10px;
+        /* width: 100vw; */
+       
+    }
+
+    .profile_picture h3{
+        /* border:solid 2px yellow; */
+        width:30vh;
+        margin: auto;
+        position: relative;
+        top: -10px;
+        left: 220px;
+        text-align: center;
+        color:#00abf0;
+        font-size : 1.2rem;
+    
+    }
+    
+    .profile_picture #pp {
+        position: relative;
+        top:-30px;
+        left: 200px;
+        border: 4px solid #00abf0;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 30px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+        transition: background-color 3s; /* Smooth transition for background color */
+    }
+
+    .sm_icons {
+        text-align: center;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: -80px;
+        width: 200px;
+        height: 30px;
+        /* margin-top: 200px; */
+        /* border: 2px solid magenta;   */
+    }
+
+    .sm_icons > a{
+        height: 35px;
+        width: 35px;
+    }
+
+
+    /* HOME PAGE END */
+
+ /* ABOUT SECTION BEGIN */
+
+.intro_box{
+    /* border: 2px solid magenta; */
+    height:80vh;
+    width:100%;
+    margin-top:5px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom:40px; */
+
+}
+
+.intro_box> #mugg_shot{
+    height:50vh;
+    width:50vh;
+    /* border:2px solid darkgreen; */
+    margin:auto;
+    margin-top:200px;
+    border-radius: 50%;
+    border-bottom: 3px solid #00abf0 ;
+   
+}
+
+.intro_box> #mugg_shot:hover{
+    background-color:#00abf0
+}
+
+.intro_details{
+    margin:auto;
+    margin-top:10px;
+    /* border:2px solid white; */
+    width: 50vw;
+    height: 78vh;
+    /* font-size:1.3rem; */
+    padding: 0px 0px 20px 20px;
+    /* margin-bottom: 5px; */
+    /* margin-top: 10px; */
+}
+
+.intro_details h1{
+    /* border:2px solid mediumseagreen; */
+    text-align: center;
+    height:8%;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#00abf0;
+    margin-bottom: 10px;
+}
+
+.intro_details p{
+    /* border:4px solid lightseagreen; */
+    height:78%;
+    font-size: 1.6rem;
+}
+
+.body_box{
+    /* border: 2px solid rgb(187, 255, 0); */
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.experience{
+    /* border: 3px solid red; */
+    width: 53vw;
+    height: 100vh;
+    margin: auto;
+    margin-top: -150px;
+}
+
+
+.experience h1{
+    border: 3px solid  #00abf0;
+    text-align: center;
+    font-size:1.6rem;
+    margin-bottom: 10px;
+    border-radius:8px;
+}
+
+.experience #in_software{                     /*No comma tell CSS to target any h2 elements inside the .experience class */
+    border: 2px solid #00abf0;
+    border-radius:8px;               
+    font-size:1.6rem;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+#CRM,#marketplace,#custom_sites{    /*The commas between the selectors tell CSS that all the ids that I want all the items have the same property.*/
+    margin-bottom:30px;
+    word-spacing: 5px;
+    font-size: 1.3rem;
+}
+
+#CRM_header,#marketplace_header,#custom_sites_header{
+    color:#00abf0;
+    font-size: 1.5rem;
+}
+
+.experience #outside_software{                     
+    border: 2px solid #00abf0; 
+    border-radius:8px;            
+    font-size:1.6rem;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.experience #in_software,.experience #outside_software{
+    letter-spacing: 1px;
+}
+
+/*Learn More Box animation BEGIN*/
+#more_about_projects {
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 2px solid #00abf0;
+    border-radius: 10px;
+    color: white;
+    height: 100px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#more_about_projects::before {
+    content: ''; /* Render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place behind text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+#more_about_projects:hover::before {
+    width: 100%; /* Expand background */
+}
+
+
+/*Learn More Box animation END*/
+
+.outside_software_box{
+    /* border:3px solid salmon; */
+    height: 20%;
+}
+
+.outside_software_box p{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    font-size: 1.3rem;
+}
+
+.outside_software_box ul{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    max-width: 100vh;
+    max-height: 100px;
+    padding: 20px;
+    font-size: 1.3rem;
+}
+
+.outside_software_box> ul >li{    /*Greater than symbols help us target the list item nested inside the ul which is nested inside the "outside_software_box div */
+    margin-bottom:20px;
+}
+
+.outside_software_box> ul> li::marker {
+    color:#00abf0;
+  }
+
+#TM_2,#drone{
+    text-decoration: none;
+}
+
+#TM_2{
+    color:greenyellow;
+    font-weight: 600;
+}
+
+#drone{
+    color: rgb(7, 133, 218);
+    font-weight: 600;
+}
+
+/* Experience and Certifications */
+
+.body_details{
+    width:40vw;
+    height:50vh;
+    /* border: 3px solid darkorange; */
+    /* position:absolute;
+    top: 1000px;
+    left: 500px;
+    margin-left: 500px; */
+}
+
+.body_details h1{
+    border:3px solid #00abf0 ;
+    text-align: center;
+    height:10%;
+    font-size: 1.7rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:6px;
+}
+
+.body_details h2{
+    /* border:4px solid lightseagreen; */
+    height:4vh;
+    width:40vw;
+    margin-top:20px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#00abf0;
+    font-weight: bold;
+}
+
+/* Certificate Box Animations BEGIN*/
+.certificate_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:30px;
+}
+
+.certificate_box > a {
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    height: 10%;
+    margin: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 8px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.certificate_box > a::before {
+    content: ''; /* Add this to render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place it behind the text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+.certificate_box > a:hover::before {
+    width: 100%; /* Fill the box on hover */
+}
+
+/* Certificate Box Animations END*/
+
+
+.skills_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    width:40vw;
+    height:30vh;
+}
+
+.skills_box> a{
+    text-decoration: none;
+    border:2px solid #00abf0;
+    height:5%;
+    margin: 5px;
+    color:white;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size:1rem;
+    border-radius: 8px;
+}
+
+/* ABOUT SECTION END */
+
+
+.body_box footer{             /* We are targetting the footer in the conatainer in the about.html */
+    /* border: 2px solid maroon; */
+    height: 10vh;
+    width:20%;
+    position: absolute;
+    left:10px;
+    bottom: -1350px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION BEGIN */
+.gallery{
+    height: 80vh;
+    width: 99%;
+    /* border: 2px solid magenta; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.image_section_1{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    
+}
+
+.image_section_2{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+
+
+
+.img_1_box{
+    /* border:2px solid magenta; */
+    height:400px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_pics{
+    height:30vh;
+    width:35vw;
+    border-radius: 8px;
+    border:3px solid #00abf0;
+}
+
+.img_1_box >a >h2{
+    border:3px solid #00abf0;
+    text-align:center;
+    color:#00abf0;
+    background-color: aliceblue;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    width: 35vw;
+    height: 4vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.img_1_box > a{
+    text-decoration: none;
+}
+
+.gallery footer{             /* We are targetting the footer in the conatainer in the portfolio.html */
+    /* border: 2px solid maroon; */
+    height: 2vh;
+    width:20%;
+    position: absolute;
+    left:50px;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+/* PORTFOLIO SECTION END */
+
+/*DESCRIPTION PAGES BEGIN */
+
+/* MARKETPLACE APP */
+.market_description{
+    /* border: 2px solid blueviolet; */
+    height: 1400px;
+}
+
+.market_description_box{
+    /* border: 2px solid greenyellow; */
+    width:100%;
+    height: 120vh;
+}
+
+.heading_image_box{
+    /* border: 3px solid turquoise; */
+    width:60vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#problem_image{
+    height:40vh;
+    width: 40vw;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+
+.problem_box_market{
+    /* border: 2px solid red; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.problem_box_market> .problem_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:90%;
+    color: rgb(7, 133, 218);
+    font-size:1.8rem;
+    position: absolute;
+    right: 100px;
+    top: 535px;
+}
+
+.problem_box_market> .problem_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:120%;
+    height:25vh;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    padding: 5px;
+    margin-top: -50px;
+    margin-right: 50px;
+    position:relative;
+    right: 100px;
+}
+
+
+
+.problem_box_market> .problem_description{
+    /* border: 2px solid gray; */
+    height: 50vh;
+    width: 90vh;
+    margin-top: 100px;
+}
+
+/*SOLUTION */
+
+
+.solution_box_market{
+    /* border: 3px solid teal; */
+    width:96vw;
+    height: 63vh;
+    /* display:flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
+    margin-top: 200px;
+   
+} 
+
+
+.solution_box_market> .solution_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 80vh;
+    margin-top: 100px;
+}
+
+.solution_box_market> .solution_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:91vw;
+    color: rgb(7, 133, 218);
+    font-size: 1.8rem;
+    position: absolute;
+    right: 100px;
+    top: 820px;
+   
+}
+
+.solution_box_market> .solution_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:120%;
+    height:25vh;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    padding: 5px;
+    margin-top: 250px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    position:relative;
+    right: -50px;
+}
+
+#solution_image{
+    height:400px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+
+
+#heading_image_box_robot > iframe{
+    border: 3px solid #00abf0;
+    width:40vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 350px;
+}
+
+#heading_image_box_market > iframe{
+    border: 3px solid #00abf0;
+    width:40vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 350px;
+    /* margin-right: 200px; */
+}
+
+#heading_image_box_engine > iframe{
+    border: 3px solid #00abf0;
+    width:40vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 350px;
+}
+
+#heading_image_box_crm > iframe{
+    border: 3px solid #00abf0;
+    width:40vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    position:absolute;
+    left: 350px;
+}
+
+#MSS_link{
+    text-decoration: none;
+    color:aqua;
+
+}
+
+.market_description > footer {  /*Marketplace App Footer positioning */
+    position: absolute;
+    bottom: -580px;
+    left: 0px;
+    /* border: 2px solid magenta; */
+    width: 25vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+/*DESCRIPTION PAGES END */
+
+
+}
+
+/* MEDIA SET 7 (FINAL) */
+
+@media only screen and
+(min-width : 1600px)
+ {
+
+   
+.header{
+    padding: 20px 10px;
+    width: 100%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:100;
+    margin: 0px 10px 20px 0px;
+
+}
+
+.header #mss_logo{
+    border: 3px solid #00abf0;
+    height: 50px;
+    /* margin-left: 30px; */
+    border-radius: 50%;
+    position: relative;
+    left: -400px;
+}
+
+.header .name_logo_box{
+    /* border:2px solid red; */
+    display: inline-flex;
+    justify-content: space-between;
+    width:600;
+    margin: 30px;
+    letter-spacing: 3px;
+}
+
+
+.logo{
+    font-size:35px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: bold
+}
+
+.navbar a {
+    font-size: 18px;
+    color:#ededed;
+    font-weight: 500;
+    margin-left: 35px;
+    text-decoration:none;
+    padding-right:40px;
+}
+
+.navbar a:hover {
+    color:#00abf0;
+}
+
+.navbar{
+    /* border: 3px solid red; */
+    margin-right: 240px;
+}
+
+.home{
+    /* border: 2px solid pink; */
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100vh;
+    height:90vh;
+    padding-left:30px;
+}
+
+.home_content {
+    max-width:100vh;
+    height:70%;
+    /* border: 2px solid magenta; */
+    display:flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-right:20px;
+    position:absolute; /*Position is used to help move this html element anywhere I want inside the .container */
+    top: 180px;
+    
+}
+
+.home_content h1{
+    font-size: 50px;
+    font-weight:700;
+}
+
+.home_content h3{
+    font-size: 32px;
+    font-weight:700;
+    color:#00abf0;
+}
+
+/* .home_content h4{
+    font-size: 32px;
+    font-weight:700;
+    color:#00abf0;
+    border: 2px solid yellowgreen;
+    margin-top: 5px;
+    position: absolute; 
+    top:220px;
+} */
+
+.home_content p{
+    font-size: 18px;
+    /* border: 2px solid teal; */
+    margin-bottom:2px;
+    margin-top:10px;
+   
+}
+
+.home_content .buttons{
+    width:100vh;
+    height:8vh;
+    margin-top:20px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 3px solid green; */
+
+}
+
+.buttons #mss_home{
+    padding:3px;
+    /* border:2px solid mediumslateblue; */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*animated Buttons Start Portion */
+
+.buttons a {
+    position: relative;
+    text-decoration: none;
+    width: 150px;
+    height: 50px;
+    padding: 0;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    color: #081b29;
+    background-color: #00abf0;
+    font-weight: 600;
+    overflow: hidden; /* This keeps the pink transition within the button */
+    z-index: 1;
+}
+
+.buttons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #02455c;
+    z-index: -1;
+    transition: width 1s;
+}
+
+.buttons a:hover::before {
+    width: 100%; /* Expands to full width on hover */
+}
+
+.buttons a:hover {
+    color: #c1e9fa; /* Text color on hover */
+}
+
+/*animated Buttons End Portion */
+.sm_icons{
+    margin-top:auto;
+    /* border: 2px solid white; */
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+    height: 50px;
+}
+
+
+
+.sm_icons a{
+    position:relative;
+    border: 2px solid #00abf0 ;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #00abf0;
+    z-index: 1;
+    overflow: hidden; /* Prevents the "before color" from spilling out of the circle borders */
+}
+
+.sm_icons a::before {
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    width:0; /* This is to allow for the color to transition from 0 to the full width of 100% */
+    height:100%;
+    background:#00abf0;
+    z-index: -1;
+    transition: 1s;
+}
+
+.sm_icons a:hover::before {
+    width:100%;
+}
+
+.sm_icons a:hover{
+    color:#081b29;
+}
+
+.container {
+    /* border: 2px solid hotpink; */
+    width: 100%;
+    height:70vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 200px;
+    /* border: 2px solid orange; */
+
+}
+
+.home_content #degree{
+    text-decoration: none;
+    color:#00abf0;
+
+}
+
+
+.container .profile_picture{
+    margin-right: 250px;
+    min-width: 40vh; /*Min and max width help me constrain the image better */
+    min-height: 40vh;
+    max-width: 50vh;
+    max-height: 50vh;
+    margin-top:200px;
+    /* border: solid 2px teal; */
+}
+
+.profile_picture h3{
+    /* border:solid 2px yellow; */
+    width:40vh;
+    margin: auto;
+    position: relative;
+    bottom: 150px;
+    text-align: center;
+    color:#00abf0;
+
+}
+
+.profile_picture #pp {
+    position: relative;
+    top:-150px;
+    border: 4px solid #00abf0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color: transparent;
+    z-index: 1;
+    overflow: hidden;
+    transition: background-color 3s; /* Smooth transition for background color */
+}
+
+.profile_picture #pp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #00abf0;
+    z-index: -1;
+    transition: width 3s;
+}
+
+.profile_picture #pp:hover::before {
+    width: 100%;
+}
+
+.profile_picture #pp:hover {
+    background-color: #00abf0;
+}
+
+/*FOOTER POSITIONING SECTION BEGIN */
+
+.conatiner footer{             /* We are targetting the footer in the conatainer in the portfoilio.html */
+    border: 2px solid yellowgreen;
+    height:500px;
+    width:500px;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; /* Centers horizontally */
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+.body_box footer{             /* We are targetting the footer in the conatainer in the about.html */
+    /* border: 2px solid maroon; */
+    height: 5vh;
+    width:20%;
+    position: absolute;
+    left:0px;
+    bottom: -1000px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+.gallery footer{             /* We are targetting the footer in the conatainer in the portfolio.html */
+    /* border: 2px solid maroon; */
+    height: 5vh;
+    width:20%;
+    position: absolute;
+    left:0px;
+    bottom: -280px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px; /* Adjust for spacing */
+}
+
+.market_description > footer {  /*Marketplace App Footer positioning */
+    position: absolute;
+    bottom: -480px;
+    left: 0px;
+} 
+
+/*FOOTER POSITIONING SECTION END */
+
+
+/* ABOUT SECTION */
+.intro_box{
+    /* border: 2px solid magenta; */
+    height:600px;
+    width:100%;
+    margin-top:5px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:40px;
+
+}
+
+.intro_box> #mugg_shot{
+    height:60vh;
+    width:70vh;
+    /* border:2px solid darkgreen; */
+    margin:auto;
+    margin-top:5px;
+    border-radius: 50%;
+    border-bottom: 3px solid #00abf0 ;
+   
+}
+
+.intro_box> #mugg_shot:hover{
+    background-color:#00abf0
+}
+
+.intro_details{
+    margin:auto;
+    margin-top:10px;
+    /* border:2px solid white; */
+    width: 100vh;
+    height: 63vh;
+    font-size: 23px;
+}
+
+.intro_details h1{
+    /* border:2px solid red; */
+    text-align: center;
+    height:20%;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#00abf0;
+}
+
+.intro_details p{
+    /* border:4px solid lightseagreen; */
+    height:78%;
+}
+
+.body_box{
+    /* border: 2px solid rgb(187, 255, 0); */
+    width:100%;
+    height:100%;
+    margin-top:0px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.body_details{
+    width:100vh;
+    height:50vh;
+    /* border: 3px solid darkorange; */
+    margin:auto;
+}
+
+
+.body_details h1{
+    border:3px solid #00abf0 ;
+    text-align: center;
+    height:10%;
+    font-size: 40px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:8px;
+}
+
+.body_details h2{
+    /* border:4px solid lightseagreen; */
+    height:4vh;
+    width:100vh;
+    margin-top:20px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#00abf0;
+    font-weight: bold;
+}
+
+.experience{
+    /* border: 3px solid red; */
+    width: 100vh;
+    height: 40vw;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.experience h1{
+    border: 3px solid  #00abf0;
+    text-align: center;
+    font-size:40px;
+    margin-bottom: 10px;
+    border-radius:8px;
+}
+
+.experience #in_software{                     /*No comma tell CSS to target any h2 elements inside the .experience class */
+    border: 2px solid #00abf0;
+    border-radius:8px;               
+    font-size:25px;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+#CRM,#marketplace,#custom_sites{    /*The commas between the selectors tell CSS that all the ids that I want all the items have the same property.*/
+    margin-bottom:20px;
+    word-spacing: 5px;
+    font-size: 18px;
+}
+
+#CRM_header,#marketplace_header,#custom_sites_header{
+    color:#00abf0
+}
+
+.experience #outside_software{                     
+    border: 2px solid #00abf0; 
+    border-radius:8px;            
+    font-size:25px;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.experience #in_software,.experience #outside_software{
+    letter-spacing: 1px;
+}
+
+/*Learn More Box animation BEGIN*/
+#more_about_projects {
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid #00abf0;
+    border-radius: 10px;
+    color: white;
+    height: 30px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#more_about_projects::before {
+    content: ''; /* Render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place behind text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+#more_about_projects:hover::before {
+    width: 100%; /* Expand background */
+}
+
+
+/*Learn More Box animation END*/
+
+.outside_software_box{
+    /* border:3px solid salmon; */
+    height: 50%;
+}
+
+.outside_software_box p{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+}
+
+.outside_software_box ul{
+    margin-bottom:10px;
+    /* border: 3px solid hotpink; */
+    max-width: 100vh;
+    max-height: 100px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.outside_software_box> ul >li{    /*Greater than symbols help us target the list item nested inside the ul which is nested inside the "outside_software_box div */
+    margin-bottom:20px;
+}
+
+.outside_software_box> ul> li::marker {
+    color:#00abf0;
+  }
+
+#TM_2,#drone{
+    text-decoration: none;
+}
+
+#TM_2{
+    color:greenyellow;
+    font-weight: 600;
+}
+
+#drone{
+    color: rgb(7, 133, 218);
+    font-weight: 600;
+}
+
+/* Experience and Certifications */
+
+/* Certificate Box Animations BEGIN*/
+.certificate_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:30px;
+}
+
+.certificate_box > a {
+    text-decoration: none;
+    border: 2px solid #00abf0;
+    height: 20%;
+    margin: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 8px;
+    position: relative;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.certificate_box > a::before {
+    content: ''; /* Add this to render the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Start with zero width */
+    background-color: #00abf0;
+    z-index: -1; /* Place it behind the text */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+.certificate_box > a:hover::before {
+    width: 100%; /* Fill the box on hover */
+}
+
+/* Certificate Box Animations END*/
+
+
+.skills_box{
+    /* border: solid 3px mediumseagreen; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:30px;
+    flex-wrap:flex;
+    width:100vh;
+    height:10vh;
+}
+
+.skills_box> a{
+    text-decoration: none;
+    border:2px solid #00abf0;
+    height:20%;
+    margin: 5px;
+    color:white;
+    padding: 10px;
+    text-align: center;
+    font-size:12px;
+    border-radius: 8px;
+}
+
+/* Portfolio sub section */
+.gallery{
+    height: 100vh;
+    width: 99%;
+    /* border: 2px solid magenta; */
+}
+
+.image_section_1{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.image_section_2{
+    /* border: 2px solid green; */
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+.img_1_box{
+    /* border:2px solid magenta; */
+    height:400px;
+    width:600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_pics{
+    height:300px;
+    width:500px;
+    border-radius: 8px;
+    border:3px solid #00abf0;
+}
+
+.img_1_box >a >h2{
+    border:3px solid #00abf0;
+    text-align:center;
+    color:#00abf0;
+    background-color: aliceblue;
+    border-radius: 8px;
+}
+
+.img_1_box > a{
+    text-decoration: none;
+}
+
+/*DESCRIPTION PAGES */
+
+/* MARKETPLACE APP */
+.market_description{
+    /* border: 2px solid blueviolet; */
+    height: 1400px;
+}
+
+.market_description_box{
+    /* border: 2px solid greenyellow; */
+    width:100%;
+    height: 120vh;
+}
+
+.heading_image_box{
+    /* border: 3px solid turquoise; */
+    width:70vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#problem_image{
+    height:500px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+.problem_box_market{
+    /* border: 2px solid red; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.problem_box_market> .problem_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:839px;
+    color: rgb(7, 133, 218);
+    font-size: 30px;
+}
+
+.problem_box_market> .problem_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:100%;
+    height:110%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 5px;
+}
+
+
+
+.problem_box_market> .problem_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 90vh;
+    margin-top: 100px;
+}
+
+/*SOLUTION */
+
+
+.solution_box_market{
+    /* border: 3px solid teal; */
+    width:100%;
+    height: 60vh;
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.solution_box_market>h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+}
+
+
+
+.solution_box_market> .solution_description{
+    /* border: 2px solid gray; */
+    height: 30vh;
+    width: 80vh;
+    margin-top: 100px;
+}
+
+.solution_box_market> .solution_description> h1{
+    /* border: 2px solid orange; */
+    text-align: center;
+    width:747px;
+    color: rgb(7, 133, 218);
+    font-size: 30px;
+}
+
+.solution_box_market> .solution_description> p{
+    /* border: 3px solid purple; */
+    text-align: center;
+    width:100%;
+    height:110%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 5px;
+}
+
+#solution_image{
+    height:400px;
+    width: 600px;
+    border-radius: 8px;
+    border: 3px solid #00abf0
+}
+
+/* EXTRA CONTENT */
+
+/* #heading_image_box_robot{
+    border: 3px solid turquoise;
+    width:70vh;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/*iframe and solution image styling */
+
+#heading_image_box_robot > iframe{
+    border: 3px solid #00abf0;
+    width:70vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.heading_image_box > iframe{
+    border: 3px solid #00abf0;
+    width:70vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#heading_image_box_drone > img{
+    border: 3px solid #00abf0;
+    width:60vh;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 60px;
+}
+
+#heading_image_box_crm > iframe{
+    border: 3px solid #00abf0;
+    width:70vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#MSS_link{
+    text-decoration: none;
+    color:aqua;
+
+}
+
+
+    /* HOME PAGE END */
+
+}
+ 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+/* Styles */
+}
+ 
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+ 
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <title>Main Page</title>
+</head>
+
+<body class = "market_description">
+
+    <!-- Navigation bar Portion-->
+    <header class = "header">
+        <!-- Made this litlle box so that I can play with name and Logo in terms of position and spacing-->
+        <div class="name_logo_box">
+            <h1 id = 'my_name'>GOPOLANG MAKGOTHI</h1>
+        </div>
+        <a href="https://a6c-wise-lavoisier.circumeo-apps.net/" class="logo"> <img id="mss_logo" src="MSS_logo.jpg"/></a>
+
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+
+    </header>
+
+    <section class = "market_description_box">
+
+
+        <!-- Problem Introduction Section -->
+        <div class = "problem_box_market">
+            <div class = "heading_image_box">
+            <img id = "problem_image" src= "https://i.redd.it/2vbs6u5sl46x.jpg"/>
+            </div>
+
+            <article class = "problem_description">
+                <h1>Problem</h1>
+                <p>Turbofan Engine Thrust at various altitudes is a pre-requisite in determining the performance of an aircraft. There are equations that can be used to calculate the thrust.
+                    However most of them require published data such as mass flow rate. <br/><br/> Such inputs are not made avaible for the public in most cases. Preventing manufactuerers from
+                    being able to gauage efficient their engines are and hence how well they are performing against their competition.
+                </p>
+            </article>
+        </div>
+
+        <!-- Solution -->
+       <div class = "solution_box_market">
+        <article class = "solution_description">
+            <h1>Solution</h1>
+            <p> A module was developed as a single python class that
+                estimates the engine thrust of a commerical turbofan engine based purely on the BPR (Bypass Ratio) of said engine. <br/><br/> With a single click, thrust curves at several altitudes up to 
+                41000 ft are generated. This was done for an Embraerer E-190. However the curves will vary depening on the inputs of the python class. This module estimates engine thrust
+                with an error margin of less than 2% 
+            </p>
+        </article>
+        
+        <div id = "heading_image_box_engine">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5Sf8NsqGe3c?si=qQxS8FpbtOYGFf0u&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    </section>
+
+
+  
+
+        <footer class="sm_icons">
+            <!-- These icons are treated as normal text, so we can increase thier size using font-size in CSS-->
+            <a href="https://www.facebook.com/thabelo.608763/"><i class='bx bxl-facebook'></i></box-icon></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.linkedin.com/in/gopolang-makgothi-9b2ab81b7/"><i class='bx bxl-linkedin'></i></a>
+        </footer>
+        
+    </section>
+
+
+</body>
+
+
+</html>
